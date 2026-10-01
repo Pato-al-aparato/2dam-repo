@@ -1,6 +1,7 @@
 import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.StandardOpenOption;
 
 public class Ex1DataStreams_append {
     public static void main(String[] args) {
@@ -33,7 +34,11 @@ public class Ex1DataStreams_append {
     }
 
     private static void escribirPersona(Path ruta, String[] nombres, int[] edades) {
-        try (OutputStream os = Files.newOutputStream(ruta) ;DataOutputStream dos = new DataOutputStream(os)){
+        try (OutputStream os = Files.newOutputStream(ruta,
+                StandardOpenOption.CREATE,
+                StandardOpenOption.APPEND
+                );
+                DataOutputStream dos = new DataOutputStream(os)){
             for (int i = 0; i < nombres.length; i++) {
                 dos.writeUTF(nombres[i]);
                 dos.writeInt(edades[i]);
