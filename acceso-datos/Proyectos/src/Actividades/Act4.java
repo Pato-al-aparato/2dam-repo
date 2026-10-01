@@ -9,29 +9,23 @@ public class Act4 {
     public static void main(String[] args) {
         Path ruta = Path.of(System.getProperty("user.dir"));
 
-        imprimirRecursivo(ruta);
+        imprimirRecursivo(ruta, 0);
     }
 
-    public static void imprimirRecursivo(Path ruta){
-        try {
-            if (Files.isDirectory(ruta)) {
-                try (DirectoryStream<Path> stream = Files.newDirectoryStream(ruta)) {
-                    for (Path lista : stream) {
-                        imprimirRecursivo(lista);
+    public static void imprimirRecursivo(Path ruta, int nivel) {
+        String identacion = " ".repeat(nivel);
 
-                        if (Files.isRegularFile(lista)){
-                            System.out.println("Fichero ---> " + lista.getFileName());
-                        }
-                        if(Files.isDirectory(lista)){
-                            System.out.println("Directorio ---> " + lista.getFileName());
-                        }
-                    }
+        if (Files.isDirectory(ruta)) {
+            System.out.println(identacion + "Directorio ---> " + ruta.getFileName());
+            try (DirectoryStream<Path> stream = Files.newDirectoryStream(ruta)) {
+                for (Path elemento : stream){
+                    imprimirRecursivo(elemento, nivel +1);
                 }
+            } catch (IOException e){
+                System.err.println("Error al leer: " + e.getMessage());
             }
-            System.out.println("Eliminado con éxito: " + ruta.toAbsolutePath());
-
-        } catch (IOException e){
-            System.out.println("No se pudo eliminar " + ruta.getFileName());
+        } else if (Files.isRegularFile(ruta)){
+            System.out.println(identacion + "Fichero ---> " + ruta.getFileName());
         }
     }
 }
