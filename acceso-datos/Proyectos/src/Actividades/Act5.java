@@ -1,31 +1,36 @@
 package Actividades;
 
 import java.io.IOException;
-import java.nio.file.DirectoryStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.Scanner;
+import java.util.stream.Stream;
 
 public class Act5 {
-    public static void main (String[] args){
+
+    public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
         System.out.print("Introduce la ruta donde quieras buscar: ");
-        String r = sc.nextLine();
+        Path ruta = Path.of(sc.nextLine());
 
-        Path ruta = Path.of(r);
-        System.out.print("Extensión: ");
+        System.out.print("Introduce la extensión: ");
         String extension = sc.nextLine();
 
-        if(Files.exists(ruta) && (Files.isDirectory(ruta))){
-            try (DirectoryStream<Path> stream = Files.newDirectoryStream(ruta,
-                    entry -> Files.isRegularFile(entry) && entry.toString().endsWith(extension))){
-                for (Path fichero: stream){
-                    System.out.println(fichero.getFileName());
-                }
+        if (Files.exists(ruta) && Files.isDirectory(ruta)) {
+
+            try (Stream<Path> archivos = Files.walk(ruta)) {
+                archivos
+                        .filter(Files::isRegularFile)
+                        .filter(fichero -> fichero.toString().endsWith(extension))
+                        .forEach(System.out::println);
+
             } catch (IOException e) {
                 System.out.println("Error: " + e.getMessage());
             }
+
+        } else {
+            System.out.println("La ruta no existe o no es un directorio.");
         }
     }
 }
