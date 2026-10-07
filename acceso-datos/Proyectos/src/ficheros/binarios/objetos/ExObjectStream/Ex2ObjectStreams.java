@@ -1,4 +1,4 @@
-package ExObjectStream;
+package ficheros.binarios.objetos.ExObjectStream;
 
 import java.io.*;
 import java.nio.file.Files;

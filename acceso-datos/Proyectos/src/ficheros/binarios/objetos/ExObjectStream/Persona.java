@@ -1,4 +1,4 @@
-package ExObjectStream;
+package ficheros.binarios.objetos.ExObjectStream;
 
 public class Persona {
     private String nombre;
