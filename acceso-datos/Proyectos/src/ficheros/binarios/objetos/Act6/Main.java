@@ -1,7 +1,5 @@
 package ficheros.binarios.objetos.Act6;
 
-import java.io.BufferedInputStream;
-import java.io.BufferedOutputStream;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.EOFException;
@@ -14,25 +12,25 @@ public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        System.out.print("Elige el nombre del fichero binario: ");
+        System.out.print("\nElige el nombre del fichero binario: ");
         String nombreFichero = sc.nextLine().trim();
 
         Path ruta = Path.of(System.getProperty("user.dir"), nombreFichero + ".dat");
 
-        escribirVehiculos(ruta, sc, 2);
+        escribirVehiculos(ruta, sc);
         leerVehiculos(ruta);
 
         sc.close();
     }
 
-    private static void escribirVehiculos(Path ruta, Scanner sc, int cantidad) {
+    private static void escribirVehiculos(Path ruta, Scanner sc) {
         try (DataOutputStream dos = new DataOutputStream((Files.newOutputStream(
                 ruta,
                 StandardOpenOption.CREATE,
                 StandardOpenOption.APPEND)))) {
 
-            for (int i = 1; i <= cantidad; i++) {
-                System.out.println("\n--- Datos del Vehículo " + i + " de " + cantidad + " ---");
+            for (int i = 1; i <= 2; i++) {
+                System.out.println("\n--- Datos del Vehículo " + i + " de 2 ---");
 
                 System.out.print("Marca: ");
                 String marca = sc.nextLine().trim();
@@ -58,7 +56,7 @@ public class Main {
                 dos.writeBoolean(vehiculo.isPintura_metalizada());
             }
 
-            System.out.println("\nSe han añadido los " + cantidad + " vehículos al fichero binario.");
+            System.out.println("\nSe han añadido los 2 vehículos al fichero binario.");
 
         } catch (IOException e) {
             System.err.println("Error E/S durante la escritura del fichero: " + e.getMessage());
