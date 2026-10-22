@@ -1,4 +1,4 @@
-package ficheros.caracteres;
+package ficheros.caracteres.ejemplos;
 
 import java.io.*;
 
