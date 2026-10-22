@@ -3,7 +3,11 @@ fun main(){
     //ex2()
     //ex3()
     //ex4()
-    ex5()
+    //ex5()
+    //ex6()
+    //ex7()
+    //ex8()
+    ex9()
 }
 
 fun ex1 (){
@@ -79,3 +83,67 @@ fun ex5 (){
         println("El número $num no es divisible entre 2")
     }
 }
+
+fun ex6(){
+    /*Realiza un programa que muestre una pregunta y 4 opciones (a, b, c y d).
+    Solicita al usuario la respuesta por teclado y muestra si la respuesta es correcta o no.
+    El programa termina cuando el usuario acierta*/
+
+    var respuesta: Char
+    do {
+        println("¿Cuál es la capital de Colombia?:")
+        println("a. La Paz")
+        println("b. Buenos Aires")
+        println("c. La Habana")
+        println("d. Bogotá")
+
+        print("Respuesta: ")
+        respuesta = readln().lowercase().first()
+
+        if (respuesta == 'd') {
+            println("¡Felicitaciones!")
+        } else {
+            println("Respuesta incorrecta. Inténtalo de nuevo.\n")
+        }
+
+    } while (respuesta != 'd')
+}
+
+fun ex7(){
+    /* Muestra los números del 1 al 100 (ambos inclusive)*/
+    for (num in 1..100){
+        println(num)
+    }
+}
+
+fun ex8() {
+    /* Haz el mismo ejercicio anterior con otro tipo de bucle*/
+    var num = 1
+
+    while(num!= 101){
+        println(num)
+        num++
+    }
+}
+
+fun ex9(){
+    for (num in 1..100){
+        if ((num % 2 == 0) && (num % 3 == 0)){
+            println(num)
+        }
+    }
+}
+
+
+// Problemas de sincronización solucionados
+
+
+
+
+
+
+
+
+
+
+
