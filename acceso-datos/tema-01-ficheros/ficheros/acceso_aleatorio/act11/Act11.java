@@ -5,7 +5,6 @@ import java.io.RandomAccessFile;
 import java.nio.file.Path;
 
 public class Act11 {
-
     private static final int BYTES_INT = 4;
     private static final Path RUTA = Path.of("fichero.dat");
 

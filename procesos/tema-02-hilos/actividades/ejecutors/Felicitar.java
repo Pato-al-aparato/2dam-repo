@@ -1,7 +1,6 @@
 package actividades.ejecutors;
 
 public class Felicitar implements Runnable {
-
     private String nombre;
 
     public Felicitar(String nombre) {

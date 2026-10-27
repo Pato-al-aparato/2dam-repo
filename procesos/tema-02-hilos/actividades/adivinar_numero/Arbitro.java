@@ -1,7 +1,6 @@
 package actividades.adivinar_numero;
 
 public class Arbitro {
-
     private int numeroJugadores;
     private int turno;
     private int numeroAdivinar;

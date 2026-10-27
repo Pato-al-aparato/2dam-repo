@@ -8,7 +8,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Felicitar felicitar = new Felicitar("David");
+        Felicitar felicitar = new Felicitar("Dragos");
 
         ScheduledExecutorService programador =
                 Executors.newScheduledThreadPool(1);

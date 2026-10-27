@@ -3,7 +3,6 @@ package actividades.adivinar_numero;
 public class Main {
 
     public static void main(String[] args) {
-
         Arbitro arbitro = new Arbitro(3);
 
         Jugador jugador1 = new Jugador(1, arbitro);

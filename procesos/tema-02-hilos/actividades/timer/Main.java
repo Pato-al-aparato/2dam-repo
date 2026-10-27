@@ -4,9 +4,7 @@ import java.util.Date;
 import java.util.Timer;
 
 public class Main {
-
     public static void main(String[] args) {
-
         System.out.println("Inicio despertador");
 
         Timer temporizador = new Timer();

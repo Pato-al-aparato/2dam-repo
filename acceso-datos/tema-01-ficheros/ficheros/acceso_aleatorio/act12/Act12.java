@@ -6,12 +6,10 @@ import java.nio.file.Path;
 import java.util.Scanner;
 
 public class Act12 {
-
     private static final int BYTES_FLOAT = 4;
     private static final Path RUTA = Path.of("fichero.dat");
 
     public static void main(String[] args) {
-
         Scanner sc = new Scanner(System.in);
         int opcion;
 
@@ -67,7 +65,6 @@ public class Act12 {
 
     // 1. Añadir número de tipo float al final
     private static void anadirNumero(Scanner sc) {
-
         try (RandomAccessFile raf = new RandomAccessFile(RUTA.toFile(), "rw")) {
 
             System.out.print("Introduce el número: ");
@@ -84,7 +81,6 @@ public class Act12 {
 
     // 2. Buscar un número y sustituir la primera aparición
     private static void buscarYSustituir(Scanner sc) {
-
         try (RandomAccessFile raf = new RandomAccessFile(RUTA.toFile(), "rw")) {
 
             System.out.print("Introduce el número que quieres buscar: ");
@@ -98,7 +94,6 @@ public class Act12 {
             raf.seek(0);
 
             while (raf.getFilePointer() < raf.length() && !encontrado) {
-
                 long posicion = raf.getFilePointer();
 
                 float numero = raf.readFloat();
@@ -126,7 +121,6 @@ public class Act12 {
 
     // 3. Sustituir el número de una posición concreta
     private static void sustituirPosicion(Scanner sc) {
-
         try (RandomAccessFile raf = new RandomAccessFile(RUTA.toFile(), "rw")) {
 
             System.out.print("Introduce la posición: ");
@@ -158,9 +152,7 @@ public class Act12 {
 
     // 4. Mostrar el contenido completo
     private static void mostrarFichero() {
-
         try (RandomAccessFile raf = new RandomAccessFile(RUTA.toFile(), "r")) {
-
             raf.seek(0);
 
             int posicion = 1;
@@ -168,7 +160,6 @@ public class Act12 {
             System.out.println("\n----- CONTENIDO DEL FICHERO -----");
 
             while (raf.getFilePointer() < raf.length()) {
-
                 float numero = raf.readFloat();
 
                 System.out.println("Posición " + posicion + ": " + numero);

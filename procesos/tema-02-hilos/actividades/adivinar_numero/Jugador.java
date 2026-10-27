@@ -1,7 +1,6 @@
 package actividades.adivinar_numero;
 
 public class Jugador extends Thread {
-
     private int idJugador;
     private Arbitro arbitro;
 
