@@ -1,4 +1,4 @@
-package actividades;
+package ficheros.sistema_ficheros.actividades;
 
 import java.io.IOException;
 import java.nio.file.Files;
