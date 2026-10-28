@@ -1,6 +1,7 @@
 package com.example.primerproyecto
 
 import android.R
+import android.content.res.Configuration
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -66,6 +67,18 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
     name = "Tema claro")
 @Composable
 fun GreetingPreview() {
+    PrimerProyectoTheme {
+        Greeting("Android")
+    }
+}
+
+@Preview(
+    showBackground = true,
+    showSystemUi = false,
+    name = "Tema oscuro",
+    uiMode = Configuration.UI_MODE_NIGHT_YES)
+@Composable
+fun GreetingPreview2() {
     PrimerProyectoTheme {
         Greeting("Android")
     }
