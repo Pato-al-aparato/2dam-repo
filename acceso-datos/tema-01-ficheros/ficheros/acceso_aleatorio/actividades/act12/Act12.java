@@ -1,4 +1,4 @@
-package ficheros.acceso_aleatorio.act12;
+package ficheros.acceso_aleatorio.actividades.act12;
 
 import java.io.IOException;
 import java.io.RandomAccessFile;
@@ -28,37 +28,29 @@ public class Act12 {
             System.out.println("4. Mostrar fichero");
             System.out.println("5. Salir");
             System.out.print("Elige una opción: ");
-
             opcion = sc.nextInt();
 
             switch (opcion) {
-
                 case 1:
                     anadirNumero(sc);
                     break;
-
                 case 2:
                     buscarYSustituir(sc);
                     break;
-
                 case 3:
                     sustituirPosicion(sc);
                     break;
-
                 case 4:
                     mostrarFichero();
                     break;
-
                 case 5:
                     System.out.println("Fin del programa.");
                     break;
-
                 default:
                     System.out.println("Opción incorrecta.");
             }
 
         } while (opcion != 5);
-
         sc.close();
     }
 
@@ -82,7 +74,6 @@ public class Act12 {
     // 2. Buscar un número y sustituir la primera aparición
     private static void buscarYSustituir(Scanner sc) {
         try (RandomAccessFile raf = new RandomAccessFile(RUTA.toFile(), "rw")) {
-
             System.out.print("Introduce el número que quieres buscar: ");
             float numeroBuscar = sc.nextFloat();
 
@@ -99,7 +90,6 @@ public class Act12 {
                 float numero = raf.readFloat();
 
                 if (numero == numeroBuscar) {
-
                     raf.seek(posicion);
                     raf.writeFloat(numeroNuevo);
 
@@ -122,14 +112,12 @@ public class Act12 {
     // 3. Sustituir el número de una posición concreta
     private static void sustituirPosicion(Scanner sc) {
         try (RandomAccessFile raf = new RandomAccessFile(RUTA.toFile(), "rw")) {
-
             System.out.print("Introduce la posición: ");
             int posicionUsuario = sc.nextInt();
 
             long numeroElementos = raf.length() / BYTES_FLOAT;
 
             if (posicionUsuario >= 1 && posicionUsuario <= numeroElementos) {
-
                 System.out.print("Introduce el nuevo número: ");
                 float numeroNuevo = sc.nextFloat();
 
@@ -161,9 +149,7 @@ public class Act12 {
 
             while (raf.getFilePointer() < raf.length()) {
                 float numero = raf.readFloat();
-
                 System.out.println("Posición " + posicion + ": " + numero);
-
                 posicion++;
             }
 

@@ -1,4 +1,4 @@
-package otros_ejemplos;
+package ficheros.otros_ejemplos;
 
 public class DemoConcatenacion {
     public static void main(String[] args) {

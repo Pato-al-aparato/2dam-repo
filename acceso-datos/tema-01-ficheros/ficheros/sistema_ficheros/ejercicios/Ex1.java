@@ -1,4 +1,4 @@
-package sistema_ficheros.ejercicios;
+package ficheros.sistema_ficheros.ejercicios;
 
 import java.io.File;
 import java.io.IOException;

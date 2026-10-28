@@ -1,4 +1,4 @@
-package sistema_ficheros.ejemplos;
+package ficheros.sistema_ficheros.ejemplos;
 
 import java.io.IOException;
 import java.nio.file.FileAlreadyExistsException;

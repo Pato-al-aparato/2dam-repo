@@ -1,4 +1,4 @@
-package ficheros.acceso_aleatorio.act11;
+package ficheros.acceso_aleatorio.actividades.act11;
 
 import java.io.IOException;
 import java.io.RandomAccessFile;
