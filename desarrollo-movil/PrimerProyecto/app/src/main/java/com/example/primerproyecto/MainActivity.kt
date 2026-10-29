@@ -59,6 +59,10 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
         color = MaterialTheme.colorScheme.onSecondary
 
     )
+
+    Text(
+        text = "Hola Pepe"
+    )
 }
 
 @Preview(

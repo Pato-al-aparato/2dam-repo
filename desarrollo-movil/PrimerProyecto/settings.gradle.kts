@@ -24,3 +24,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "PrimerProyecto"
 include(":app")
+include(":contenedores")
