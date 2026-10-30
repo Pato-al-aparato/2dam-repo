@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 
-public class Act2 {
+public class Ejercicio02CrearJerarquiaDirectorios {
     public static void main(String[] args) {
         try {
             Path path = Path.of("examen","tema1","ejercicios");

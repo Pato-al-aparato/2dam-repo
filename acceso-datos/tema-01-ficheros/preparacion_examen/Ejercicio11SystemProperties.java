@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 
-public class Act11getProperties {
+public class Ejercicio11SystemProperties {
     public static void main(String[] args){
         Path raiz = Path.of(System.getProperty("user.dir"));
         Path datos = raiz.resolve("datos");

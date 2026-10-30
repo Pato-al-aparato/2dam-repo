@@ -6,7 +6,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.Scanner;
 
-public class Act7FiltroRecursividadConUsuario {
+public class Ejercicio07BuscarExtensionUsuario {
     public static void main (String[] args){
         Scanner sc = new Scanner(System.in);
         String extension = ".";

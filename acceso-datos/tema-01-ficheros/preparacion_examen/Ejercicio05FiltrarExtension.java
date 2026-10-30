@@ -5,7 +5,7 @@ import java.nio.file.DirectoryStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
 
-public class Act5FiltroSinRecursividad {
+public class Ejercicio05FiltrarExtension {
     public static void main (String[] args){
         try {
             Path ruta = Path.of("filtros");

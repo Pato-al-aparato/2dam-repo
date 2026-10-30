@@ -7,7 +7,7 @@ import java.nio.file.Path;
 
 /* Implementación de metodos que comprueban si una ruta pertenece a un fichero o a una carpeta*/
 
-public class Act3 {
+public class Ejercicio03ListarContenidoDirectorio {
     public static void main (String[] args){
         try {
             Path ruta1 = Path.of("practica");

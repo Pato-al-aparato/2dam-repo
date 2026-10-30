@@ -5,7 +5,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.Scanner;
 
-public class Act8CopiarMover {
+public class Ejercicio08MoverFichero {
     public static void main(String[] args){
         Scanner sc = new Scanner(System.in);
 

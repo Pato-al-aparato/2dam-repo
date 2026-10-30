@@ -5,7 +5,7 @@ import java.nio.file.DirectoryStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
 
-public class Act6FiltroRecursividad {
+public class Ejercicio06FiltrarExtensionRecursivo {
     public static void main (String[] args){
         try {
             String extension = ".txt";

@@ -7,7 +7,7 @@ import java.nio.file.Path;
 /* Algunos mini ejercicios con los conceptos base de creación de rutas,
 ficheros, directorios y la comporbación de que existen*/
 
-public class Act1 {
+public class Ejercicio01CrearDirectorioYFichero {
     public static void main(String[] args) {
         try {
             Path path = Path.of("pruebas");
