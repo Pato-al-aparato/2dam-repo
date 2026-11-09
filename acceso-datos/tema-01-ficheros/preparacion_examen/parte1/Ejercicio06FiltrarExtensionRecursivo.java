@@ -1,4 +1,4 @@
-package preparacion_examen;
+package preparacion_examen.parte1;
 
 import java.io.IOException;
 import java.nio.file.DirectoryStream;
