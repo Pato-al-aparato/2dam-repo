@@ -37,21 +37,21 @@ public class DemoConexionMySQL {
             mostrar(dao.listar());
 
 //            // 3. Actualizar precios. -10% si precio > 100
-//            for (Producto p : dao.listar()) {
-//                double nuevoPrecio;
-//                if (p.getPrecio() > 100) {
-//                    nuevoPrecio = p.getPrecio() * 0.90;
-//                } else {
-//                    nuevoPrecio = p.getPrecio() * 1.10;
-//                }
-//                nuevoPrecio = (double) Math.round(nuevoPrecio * 100) / 100;
-//                Producto nuevo = new Producto(p.getReferencia(), nuevoPrecio);
-//                dao.actualizar(nuevo);
-//            }
-//
-//            // 4. Mostrar los productos.
-//            System.out.println("=== Precios tras actualización de precios ===");
-//            mostrar(dao.listar());
+            for (Producto p : dao.listar()) {
+                double nuevoPrecio;
+                if (p.getPrecio() > 100) {
+                    nuevoPrecio = p.getPrecio() * 0.90;
+                } else {
+                    nuevoPrecio = p.getPrecio() * 1.10;
+                }
+                nuevoPrecio = (double) Math.round(nuevoPrecio * 100) / 100;
+                Producto nuevo = new Producto(p.getReferencia(), nuevoPrecio);
+                dao.actualizar(nuevo);
+            }
+
+            // 4. Mostrar los productos.
+            System.out.println("=== Precios tras actualización de precios ===");
+            mostrar(dao.listar());
 
 
         } catch (DAOException e) {

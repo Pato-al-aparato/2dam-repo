@@ -25,4 +25,8 @@ public interface ProductoDAO {
      * @throws DAOException
      */
     boolean actualizar(Producto producto) throws DAOException;
+
+    boolean eliminar(int referencia) throws DAOException;
+
+    Producto buscar(int referencia) throws DAOException;
 }

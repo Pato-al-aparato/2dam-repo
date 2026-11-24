@@ -17,7 +17,13 @@ public class ProductoDAOImplMySQL implements ProductoDAO {
             "SELECT id_producto, precio FROM productos ORDER BY id_producto";
     private static final String SQL_ACTUALIZAR =
             //"UPDATE productos SET precio = 28.00 WHERE id_producto = 1001";
-            "UPDATE productos SET precio = ? WHERE id_producto = 1001";
+            "UPDATE productos SET precio = ? WHERE id_producto = ?";
+
+    private static final String SQL_BORRAR =
+            "DELETE FROM productos WHERE id_producto = ?";
+
+    private static final String SQL_BUSCAR =
+            "SELECT id_producto,precio FROM productos WHERE id_producto = ?";
 
 
     private final ConexionBD conexionBD;
@@ -90,6 +96,40 @@ public class ProductoDAOImplMySQL implements ProductoDAO {
 
         } catch (SQLException e) {
             throw new DAOException("Error al actualizar los producto " + producto.getReferencia(), e);
+        }
+    }
+
+    @Override
+    public boolean eliminar(int referencia) throws DAOException {
+        try (Connection conn = conexionBD.obtenerConexion();
+             PreparedStatement ps = conn.prepareStatement(SQL_BORRAR)) {
+
+            ps.setInt(1, referencia);
+
+
+            return ps.executeUpdate() > 0;
+
+        } catch (SQLException e) {
+            throw new DAOException("Error al borrar el producto " + referencia, e);
+        }
+    }
+
+    @Override
+    public Producto buscar(int referencia) throws DAOException {
+        try (Connection conn = conexionBD.obtenerConexion();
+             PreparedStatement ps = conn.prepareStatement(SQL_BUSCAR)) {
+
+            ps.setInt(1, referencia);
+            ResultSet rs = ps.executeQuery();
+
+            if(rs.next()){
+                return new Producto(rs.getInt(1),rs.getDouble(2));
+            }
+
+            return null;
+
+        } catch (SQLException e) {
+            throw new DAOException("Error al buscar el producto " + referencia, e);
         }
     }
 }
