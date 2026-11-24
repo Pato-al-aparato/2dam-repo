@@ -5,10 +5,8 @@ import dao.DAOException;
 import dao.ProductoDAO;
 import modelo.Producto;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
-import java.sql.SQLIntegrityConstraintViolationException;
+import java.sql.*;
+import java.util.ArrayList;
 import java.util.List;
 
 public class ProductoDAOImplMySQL implements ProductoDAO {
@@ -18,7 +16,9 @@ public class ProductoDAOImplMySQL implements ProductoDAO {
     private static final String SQL_LISTAR =
             "SELECT id_producto, precio FROM productos ORDER BY id_producto";
     private static final String SQL_ACTUALIZAR =
-            "UPDATE productos SET precio = 28.00 WHERE id_producto = 1001";
+            //"UPDATE productos SET precio = 28.00 WHERE id_producto = 1001";
+            "UPDATE productos SET precio = ? WHERE id_producto = 1001";
+
 
     private final ConexionBD conexionBD;
 
@@ -54,7 +54,20 @@ public class ProductoDAOImplMySQL implements ProductoDAO {
      */
     @Override
     public List<Producto> listar() throws DAOException {
-        return List.of();
+        List<Producto> productos = new ArrayList<>();
+
+        try (Connection conn = conexionBD.obtenerConexion();
+             PreparedStatement ps = conn.prepareStatement(SQL_LISTAR)) {
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()){
+                productos.add(new Producto(rs.getInt("id_producto"),rs.getDouble("precio")));
+            }
+
+            return productos;
+
+        } catch (SQLException e) {
+            throw new DAOException("Error al listar productos ",e);
+        }
     }
 
     /**
@@ -66,6 +79,17 @@ public class ProductoDAOImplMySQL implements ProductoDAO {
      */
     @Override
     public boolean actualizar(Producto producto) throws DAOException {
-        return false;
+        try (Connection conn = conexionBD.obtenerConexion();
+             PreparedStatement ps = conn.prepareStatement(SQL_ACTUALIZAR)) {
+
+            ps.setDouble(1, producto.getPrecio());
+            ps.setInt(2, producto.getReferencia());
+
+
+            return ps.executeUpdate() > 0;
+
+        } catch (SQLException e) {
+            throw new DAOException("Error al actualizar los producto " + producto.getReferencia(), e);
+        }
     }
 }
