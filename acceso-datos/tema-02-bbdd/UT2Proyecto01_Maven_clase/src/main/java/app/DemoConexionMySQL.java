@@ -21,7 +21,7 @@ public class DemoConexionMySQL {
         Random azar = new Random();
         Path ruta = Path.of("src/main/db.properties");
         // (Connection conexion = new ConexionBD()).obtenerConexion())
-        try  {
+        try {
             // Nos creamos un objeto ConexionBD a partir del fichero db.properties
             ConexionBD conexionBD = new ConexionBD(ruta);
             ProductoDAO dao = new ProductoDAOImplMySQL(conexionBD);
@@ -53,6 +53,32 @@ public class DemoConexionMySQL {
             System.out.println("=== Precios tras actualización de precios ===");
             mostrar(dao.listar());
 
+
+            // 5. Eliminar. Insertar un producto para luego borrarlo
+            // id = 9001
+            // precio = 5.00
+
+            // Mostrar lista completa
+            System.out.println("=== Productos iniciales ===");
+            mostrar(dao.listar());
+
+            //Mostrar lista completa
+            System.out.println("Producto tras insertar el producto 9001");
+            dao.insertar(new Producto(9001, 5.00));
+            mostrar(dao.listar());
+
+            // Borrar ese registro
+            System.out.println("Producto tras eliminar el producto 9001");
+            dao.eliminar(9001);
+
+
+            // 6. Buscar el 1001 y mostrar mensaje de existe o no
+            Producto producto = dao.buscar(9001);
+            if (producto != null) {
+                System.out.println("El producto 9001 existe");
+            } else {
+                System.out.println("El producto 9001 no existe");
+            }
 
         } catch (DAOException e) {
             System.err.println("Error al conectar " + e.getMessage());

@@ -80,6 +80,16 @@ public class ProductoDAOImplFicheros implements ProductoDAO {
         }
     }
 
+    @Override
+    public boolean eliminar(int referencia) throws DAOException {
+        return false;
+    }
+
+    @Override
+    public Producto buscar(int referencia) throws DAOException {
+        return null;
+    }
+
     // MÉTODOS AUXILIARES
     // Contar el número de registro que contiene el fichero
     private long contar (RandomAccessFile raf) throws IOException {
