@@ -11,6 +11,9 @@ target/
 .gradle/
 build/
 
+# Android
+local.properties
+
 # Sistema operativo
 .DS_Store
 Thumbs.db
