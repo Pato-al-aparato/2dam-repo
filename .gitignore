@@ -61,3 +61,8 @@ Desktop.ini
 *.old
 *.bak
 *~
+
+# Archivos locales de prácticas - no versionar
+/acceso-datos/tema-01-ficheros/ficheros/dao_acceso_aleatorio/
+/acceso-datos/tema-01-ficheros/productos.dat
+
