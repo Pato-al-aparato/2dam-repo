@@ -1,19 +1,63 @@
-# IntelliJ IDEA
+# IDEs
 .idea/
 *.iml
-out/
+*.ipr
+*.iws
+.vscode/
+.settings/
+.classpath
+.project
+.factorypath
+.apt_generated
+.springBeans
+.sts4-cache
 
-# Java
+# Java / Kotlin
 *.class
-target/
+.kotlin/
+out/
+bin/
+hs_err_pid*
+replay_pid*
 
 # Gradle
 .gradle/
 build/
 
+# Maven
+target/
+
 # Android
 local.properties
+captures/
+.externalNativeBuild/
+.cxx/
+
+# NetBeans
+nbproject/private/
+nbbuild/
+dist/
+nbdist/
+.nb-gradle/
+
+# Configuración local y credenciales
+.env
+.env.*
+!.env.example
+!.env.template
+db-local.properties
+application-local.properties
+
+# Logs
+*.log
 
 # Sistema operativo
 .DS_Store
+._*
 Thumbs.db
+Desktop.ini
+
+# Copias temporales
+*.old
+*.bak
+*~
