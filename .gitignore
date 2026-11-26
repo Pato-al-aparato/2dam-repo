@@ -4,6 +4,7 @@
 *.ipr
 *.iws
 .vscode/
+.vs/
 .settings/
 .classpath
 .project
@@ -57,12 +58,14 @@ application-local.properties
 Thumbs.db
 Desktop.ini
 
-# Copias temporales
+# Copias y archivos temporales
 *.old
 *.bak
+*.tmp
+*.swp
+*.orig
 *~
 
 # Archivos locales de prácticas - no versionar
 /acceso-datos/tema-01-ficheros/ficheros/dao_acceso_aleatorio/
 /acceso-datos/tema-01-ficheros/productos.dat
-

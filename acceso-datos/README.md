@@ -2,27 +2,25 @@
 
 Ejercicios, prácticas y actividades del módulo de **Acceso a Datos** de 2º DAM.
 
-## Estructura
+## Contenido
 
-Actualmente el contenido corresponde al **Tema 1: Ficheros**.
+### Tema 1 — Ficheros
 
-```text
-tema-01-ficheros/
-├── actividades/
-├── sistema_ficheros/
-│   ├── ejemplos/
-│   └── ejercicios/
-├── ficheros/
-│   ├── caracteres/
-│   │   ├── ejemplos/
-│   │   └── actividades/
-│   ├── binarios/
-│   │   ├── streams/
-│   │   └── objetos/
-│   │       ├── ejemplos/
-│   │       └── actividades/
-│   └── acceso_aleatorio/
-└── otros_ejemplos/
-```
+Incluye ejercicios y ejemplos sobre:
 
-La estructura separa ejemplos, ejercicios y actividades, manteniendo los paquetes Java coherentes con las rutas del proyecto.
+- sistema de ficheros;
+- ficheros de caracteres;
+- ficheros binarios;
+- acceso aleatorio;
+- preparación de examen.
+
+### Tema 2 — Bases de datos
+
+Incluye prácticas y proyectos relacionados con:
+
+- acceso a datos mediante DAO;
+- ficheros RAF;
+- JDBC y MySQL;
+- proyectos Java y Maven.
+
+La estructura original de cada práctica se mantiene cuando forma parte del ejercicio o de la configuración utilizada en clase.
